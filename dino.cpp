@@ -9,7 +9,7 @@
 #include <GL/glu.h>
 #include <sstream>
 #include <unistd.h>
-static int animationPeriod = 3;
+static int animationPeriod = 4;
 static int isAnimate = 0;
 int score = 0;
 const int fact = 3;
@@ -202,38 +202,6 @@ void draw_circle(double theta, double inner_radius, double outer_radius, int x, 
     }
     glEnd();
 }
-// cactus
-//     int x = 30;
-//     glColor3f(0.0,1.0,0.0);
-//	//glColor3f((0) / 255.0, (0) / 255.0, (0) / 255.0);
-//     glBegin(GL_POLYGON);
-//         glVertex2f(x_, 250 * len);
-//         glVertex2f(x_ + x, 250 * len);
-//         glVertex2f(x_ + x, 650 * len);
-//         glVertex2f(x_, 650 * len);
-//     glEnd();
-//
-//     draw_circle(180.0, 0.0, x / 2, x_ + x / 2, 650 * len);
-//
-//     glBegin(GL_POLYGON);
-//         glVertex2f(x_ + x + 25, 400 * len);
-//         glVertex2f(x_ + x + 50, 400 * len);
-//         glVertex2f(x_ + x + 50, 600 * len);
-//         glVertex2f(x_ + x + 25, 600 * len);
-//     glEnd();
-//
-//     draw_circle(180.0, 0.0, 25.0 / 2, x_ + x + 75.0 / 2, 600 * len);
-//
-//     glBegin(GL_POLYGON);
-//         glVertex2f(x_ - 25, 400 * len);
-//         glVertex2f(x_ - 50, 400 * len);
-//         glVertex2f(x_ - 50, 600 * len);
-//         glVertex2f(x_ - 25, 600 * len);
-//     glEnd();
-//     draw_circle(180.0, 0.0, 25.0 / 2, x_ - 75.0 / 2, 600 * len);
-//     draw_circle(90.0, 25, 50, x_ + x, 400 * len, -1);
-//     draw_circle(90.0, 25, 50, x_, 400 * len, -1, -1);
-// }
 
 void generate_tree(int x_, double len)
 {
@@ -315,14 +283,15 @@ void render(void)
 
     generate_tree(x_, 1.0);
     generate_tree(x_ + 100, 0.95);
-
+    //speed of the entire game is controlled by the animationPeriod variable
+    //below x_ is the x coordinate of the dinosaur also speed of the dinosaur is controlled by the animationPeriod variable
     if (x_ >= 0)
-        x_ -= 2;
+        x_ -= 5;
     else
     {
         x_ = 2000 + rand() % 400;
     }
-    glLineWidth(1);
+    glLineWidth(2);
     glBegin(GL_LINES);
     glColor3f((1) / 255.0, (1) / 255.0, (1) / 255.0); // The glColor3f function sets the current color for drawing, which in this case is black (0, 0, 0).
     glVertex2f(0, 250);
@@ -419,7 +388,7 @@ void render(void)
         std::stringstream ss;
         // increase the size of font size
 
-        ss << "Score: " << score;
+        ss << " " << score;
         // use a string stream for displaying the score
         std::string scoreStr = ss.str();
         std::string gameover = "Game Over! Your Score is: ";
