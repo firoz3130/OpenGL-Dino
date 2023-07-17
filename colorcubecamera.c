@@ -47,7 +47,7 @@ void display(void)
     glRotatef(theta[1], 0.0, 1.0, 0.0);
     glRotatef(theta[2], 0.0, 0.0, 1.0);
     colorCube();
-    glFlush();
+    // glFlush();
     glutSwapBuffers();
 }
 void mouse(int btn, int state, int x, int y)
