@@ -80,7 +80,7 @@ void myinit()
     glClearColor(0, 0, 0, 1);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-1, 1, -1, 1, -1, 15);
+    glOrtho(-1, 1, -1, 1, -1, 10);
     glMatrixMode(GL_MODELVIEW);
 }
 int main(int argc, char** argv)

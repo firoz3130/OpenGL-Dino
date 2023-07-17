@@ -52,7 +52,7 @@ void scanfill(float x1, float y1, float x2, float y2, float x3, float y3, float 
     {
         if (le[y] <= re[y])
         {
-            for (i = (int)le[y];i < (int)re[y];i++)
+            for (i = (int)le[y];i <= (int)re[y];i++)
                 draw_pixel(i, y);
         }
     }
