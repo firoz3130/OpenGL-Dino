@@ -84,11 +84,11 @@ void displayFunc()
         bezier(ctrlPts, nctrlPts, nBezcurvePts);
     }
     glPopMatrix();
-    glColor3f(0.7, 0.5, 0.3);
+    glColor3f(1, 1, 0.6);
     glLineWidth(5);
     glBegin(GL_LINES);
-    glVertex2f(20, 100);
-    glVertex2f(20, 40);
+    glVertex2i(20, 100);
+    glVertex2i(20, 40);
     glEnd();
     glFlush();
     glutPostRedisplay();
@@ -105,10 +105,15 @@ void winReshapeFunc(GLint newWidth, GLint newHeight)
 }
 void fillMenu(int option)
 {
-    if (option == 1)
-        glutDisplayFunc(displayFunc);
-    if (option == 2)
-        exit(0);
+    switch (option)
+    {
+    case 1:displayFunc;
+        break;
+    case 2:exit(0);
+        break;
+    default:
+        break;
+    }
 }
 int main(int argc, char** argv)
 {
