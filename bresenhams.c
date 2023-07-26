@@ -1,6 +1,6 @@
 #include<GL/glut.h>
 #include<stdio.h>
-int x1 = 120, x2 = 180, y1 = 80, y2 = 180;
+int x1 = 120, x2 = 180, y1 = 280, y2 = 180;
 
 void drawpixel(int x, int y)
 {
